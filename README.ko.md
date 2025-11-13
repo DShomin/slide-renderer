@@ -103,7 +103,7 @@ slides = [
             "title": "주요 기능",
             "items": [
                 {"title": "빠름", "description": "고성능 렌더링"},
-                {"title": "간단함", "description": "사용하기 쉬운 API"},
+                {"title": "간단함", "description": "사용하기 쉬운 인터페이스"},
                 {"title": "유연함", "description": "커스터마이징 가능한 템플릿"}
             ]
         }
@@ -279,7 +279,7 @@ slide-renderer는 **14가지 슬라이드 타입**을 지원합니다:
 
 ---
 
-## API 레퍼런스
+## 사용 가이드
 
 ### SlideRenderer
 
@@ -360,14 +360,14 @@ print([t.value for t in all_types])
 slide-renderer/
 ├── src/
 │   ├── slide_renderer/          # 핵심 렌더링 라이브러리
-│   │   ├── __init__.py          # Public API
+│   │   ├── __init__.py          # 공개 인터페이스
 │   │   ├── renderer.py          # SlideRenderer 클래스
 │   │   ├── types.py             # SlideTypeEnum
 │   │   └── schemas/             # Pydantic 모델
 │   │       └── content.py       # 14개 슬라이드 콘텐츠 모델
 │   │
 │   └── paper_to_presentation/   # 예제: LLM 통합
-│       ├── __init__.py          # Public API
+│       ├── __init__.py          # 공개 인터페이스
 │       ├── converter.py         # 메인 오케스트레이션
 │       ├── planning.py          # 1단계: 계획
 │       ├── generator.py         # 2단계: 생성

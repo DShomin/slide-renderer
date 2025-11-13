@@ -103,7 +103,7 @@ slides = [
             "title": "Key Features",
             "items": [
                 {"title": "Fast", "description": "High performance rendering"},
-                {"title": "Simple", "description": "Easy to use API"},
+                {"title": "Simple", "description": "Easy to use interface"},
                 {"title": "Flexible", "description": "Customizable templates"}
             ]
         }
@@ -279,7 +279,7 @@ See [sample_data/README.md](sample_data/README.md) for JSON examples of each typ
 
 ---
 
-## API Reference
+## Usage Guide
 
 ### SlideRenderer
 
@@ -360,14 +360,14 @@ print([t.value for t in all_types])
 slide-renderer/
 ├── src/
 │   ├── slide_renderer/          # Core rendering library
-│   │   ├── __init__.py          # Public API
+│   │   ├── __init__.py          # Exports (public interface)
 │   │   ├── renderer.py          # SlideRenderer class
 │   │   ├── types.py             # SlideTypeEnum
 │   │   └── schemas/             # Pydantic models
 │   │       └── content.py       # 14 slide content models
 │   │
 │   └── paper_to_presentation/   # Example: LLM integration
-│       ├── __init__.py          # Public API
+│       ├── __init__.py          # Exports (public interface)
 │       ├── converter.py         # Main orchestration
 │       ├── planning.py          # Phase 1: Planning
 │       ├── generator.py         # Phase 2: Generation
