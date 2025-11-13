@@ -1,0 +1,23 @@
+{
+  "description": "Content for highlight slide (d-highlight).\n\nUse case: Key messages, important callouts, CTAs",
+  "properties": {
+    "title": {
+      "description": "Highlight title",
+      "maxLength": 40,
+      "title": "Title",
+      "type": "string"
+    },
+    "content": {
+      "description": "Highlight message or call-to-action",
+      "maxLength": 200,
+      "title": "Content",
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "content"
+  ],
+  "title": "HighlightContent",
+  "type": "object"
+}

@@ -1,0 +1,85 @@
+{
+  "$defs": {
+    "ImageItem": {
+      "description": "Image with URL and alt text.",
+      "properties": {
+        "url": {
+          "description": "Image URL (can be relative or absolute)",
+          "title": "Url",
+          "type": "string"
+        },
+        "alt": {
+          "description": "Image alt text for accessibility",
+          "maxLength": 100,
+          "title": "Alt",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "alt"
+      ],
+      "title": "ImageItem",
+      "type": "object"
+    },
+    "ListItem": {
+      "description": "List item with title and description.",
+      "properties": {
+        "title": {
+          "description": "Item title",
+          "maxLength": 100,
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "description": "Item description",
+          "maxLength": 300,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "ListItem",
+      "type": "object"
+    }
+  },
+  "description": "Content for image with description slide - 2 images (j-image-with-description---2-images-text).\n\nUse case: Before/after comparisons, dual products, exactly 2 images + 2 descriptions",
+  "properties": {
+    "title": {
+      "description": "Slide title",
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    },
+    "images": {
+      "description": "Exactly 2 images",
+      "items": {
+        "$ref": "#/$defs/ImageItem"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "title": "Images",
+      "type": "array"
+    },
+    "items": {
+      "description": "Exactly 2 text descriptions matching images",
+      "items": {
+        "$ref": "#/$defs/ListItem"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "title": "Items",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "images",
+    "items"
+  ],
+  "title": "ImageWithDescription2Content",
+  "type": "object"
+}

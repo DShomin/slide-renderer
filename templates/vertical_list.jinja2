@@ -1,0 +1,12 @@
+<!-- f. Vertical List -->
+<div class="section-title-container">
+  <h1 class="section-title">{{ title }}</h1>
+  <div class="section-content">
+    <div class="list-vertical">
+{% for item in items %}      <div class="list-item">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+{% endfor %}    </div>
+  </div>
+</div>

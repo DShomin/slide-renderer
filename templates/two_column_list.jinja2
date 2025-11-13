@@ -1,0 +1,14 @@
+<!-- e. Two Column List -->
+<div class="two-column">
+  <div class="left">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="right">
+    <div class="list-vertical">
+{% for item in items %}      <div class="list-item">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+{% endfor %}    </div>
+  </div>
+</div>

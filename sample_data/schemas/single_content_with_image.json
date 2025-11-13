@@ -1,0 +1,36 @@
+{
+  "description": "Content for single content with image slide (c-single-content-with-image).\n\nUse case: Feature spotlight, product showcase",
+  "properties": {
+    "title": {
+      "description": "Content title",
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    },
+    "description": {
+      "description": "Content description",
+      "maxLength": 300,
+      "title": "Description",
+      "type": "string"
+    },
+    "image_url": {
+      "description": "Image URL",
+      "title": "Image Url",
+      "type": "string"
+    },
+    "image_alt": {
+      "description": "Image alt text",
+      "maxLength": 100,
+      "title": "Image Alt",
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "image_url",
+    "image_alt"
+  ],
+  "title": "SingleContentWithImageContent",
+  "type": "object"
+}

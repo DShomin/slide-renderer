@@ -1,0 +1,14 @@
+<!-- h. Two Columns with 2x2 Grid -->
+<div class="two-column">
+  <div class="left">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="right">
+    <div class="grid-2x2">
+{% for item in items %}      <div class="list-item">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+{% endfor %}    </div>
+  </div>
+</div>

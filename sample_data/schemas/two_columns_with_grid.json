@@ -1,0 +1,52 @@
+{
+  "$defs": {
+    "ListItem": {
+      "description": "List item with title and description.",
+      "properties": {
+        "title": {
+          "description": "Item title",
+          "maxLength": 100,
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "description": "Item description",
+          "maxLength": 300,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "ListItem",
+      "type": "object"
+    }
+  },
+  "description": "Content for two columns with 2x2 grid slide (h-two-columns-with-2x2-grid).\n\nUse case: Four-quadrant analysis, 2x2 matrices, exactly 4 items",
+  "properties": {
+    "title": {
+      "description": "Grid title",
+      "maxLength": 40,
+      "title": "Title",
+      "type": "string"
+    },
+    "items": {
+      "description": "Exactly 4 items for 2x2 grid",
+      "items": {
+        "$ref": "#/$defs/ListItem"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "title": "Items",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "items"
+  ],
+  "title": "TwoColumnsWithGridContent",
+  "type": "object"
+}

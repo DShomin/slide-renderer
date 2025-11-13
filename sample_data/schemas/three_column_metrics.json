@@ -1,0 +1,52 @@
+{
+  "$defs": {
+    "MetricWithDescription": {
+      "description": "Metric with value and description (for 3-column metrics).",
+      "properties": {
+        "value": {
+          "description": "Metric value (e.g., 'XX%', '1.2K')",
+          "maxLength": 20,
+          "title": "Value",
+          "type": "string"
+        },
+        "description": {
+          "description": "Metric description",
+          "maxLength": 150,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "description"
+      ],
+      "title": "MetricWithDescription",
+      "type": "object"
+    }
+  },
+  "description": "Content for 3 column metrics slide (l-3-column-metrics).\n\nUse case: KPI dashboard, statistics overview, exactly 3 metrics",
+  "properties": {
+    "title": {
+      "description": "Metrics title",
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    },
+    "metrics": {
+      "description": "Exactly 3 metrics",
+      "items": {
+        "$ref": "#/$defs/MetricWithDescription"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Metrics",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "metrics"
+  ],
+  "title": "ThreeColumnMetricsContent",
+  "type": "object"
+}

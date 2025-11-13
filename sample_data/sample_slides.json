@@ -1,0 +1,213 @@
+{
+  "title_slide": {
+    "title": "Slide Deck Title",
+    "subtitle": "This is just the beginning of something big."
+  },
+  "section_title": {
+    "title": "Section title"
+  },
+  "single_content_with_image": {
+    "title": "Header",
+    "description": "Add a quick description of each thing, with enough context to understand what's up.",
+    "image_url": "https://picsum.photos/500/500?random=1",
+    "image_alt": "Image"
+  },
+  "highlight": {
+    "title": "Highlight",
+    "content": "Use this slide to highlight a single, important thing. To keep it short and sweet, you might link away to relevant doc or file."
+  },
+  "two_column_list": {
+    "title": "Simple list",
+    "items": [
+      {
+        "title": "First thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "title": "Second thing",
+        "description": "Keep 'em short and sweet, so they're easy to scan and remember."
+      },
+      {
+        "title": "Third thing",
+        "description": "If you've got a bunch, add another row, or use multiple copies of this slide."
+      }
+    ]
+  },
+  "vertical_list": {
+    "title": "Simple list",
+    "items": [
+      {
+        "title": "First thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "title": "Second thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "title": "First thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "title": "First thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      }
+    ]
+  },
+  "horizontal_3_column_list": {
+    "title": "Simple list",
+    "items": [
+      {
+        "title": "First thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "title": "Second thing",
+        "description": "Keep 'em short and sweet, so they're easy to scan and remember."
+      },
+      {
+        "title": "Third thing",
+        "description": "If you've got a bunch, add another row, or use multiple copies of this slide."
+      }
+    ]
+  },
+  "two_columns_with_grid": {
+    "title": "Two columns",
+    "items": [
+      {
+        "title": "First thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "title": "Second thing",
+        "description": "Keep 'em short and sweet, so they're easy to scan and remember."
+      },
+      {
+        "title": "Third thing",
+        "description": "Keep 'em short and sweet, so they're easy to scan and remember."
+      },
+      {
+        "title": "Fourth thing",
+        "description": "If you've got a bunch, add another row, or use multiple copies of this slide."
+      }
+    ]
+  },
+  "horizontal_4_column_list": {
+    "title": "Simple list",
+    "items": [
+      {
+        "title": "First thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "title": "Second thing",
+        "description": "Keep 'em short and sweet, so they're easy to scan and remember."
+      },
+      {
+        "title": "Third thing",
+        "description": "If you've got a bunch, add another row, or use multiple copies of this slide."
+      },
+      {
+        "title": "Fourth thing",
+        "description": "Keep 'em short and sweet, so they're easy to scan and remember."
+      }
+    ]
+  },
+  "image_with_description_2": {
+    "title": "Image with description",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=2",
+        "alt": "Image"
+      },
+      {
+        "url": "https://picsum.photos/500/500?random=3",
+        "alt": "Image"
+      }
+    ],
+    "items": [
+      {
+        "title": "First thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "title": "Second thing",
+        "description": "Keep 'em short and sweet, so they're easy to scan and remember."
+      }
+    ]
+  },
+  "image_with_description_3": {
+    "title": "Image with description",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=4",
+        "alt": "Image"
+      },
+      {
+        "url": "https://picsum.photos/500/500?random=5",
+        "alt": "Image"
+      },
+      {
+        "url": "https://picsum.photos/500/500?random=6",
+        "alt": "Image"
+      }
+    ],
+    "items": [
+      {
+        "title": "First thing",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "title": "Second thing",
+        "description": "Keep 'em short and sweet, so they're easy to scan and remember."
+      },
+      {
+        "title": "Third thing",
+        "description": "If you've got a bunch, add another row, or use multiple copies of this slide."
+      }
+    ]
+  },
+  "three_column_metrics": {
+    "title": "3 column metric",
+    "metrics": [
+      {
+        "value": "XX%",
+        "description": "Add a quick description of each thing, with enough context to understand what's up."
+      },
+      {
+        "value": "XX%",
+        "description": "If you've got a bunch, add another row, or use multiple copies of this slide."
+      },
+      {
+        "value": "XX%",
+        "description": "Keep 'em short and sweet, so they're easy to scan and remember."
+      }
+    ]
+  },
+  "metrics_grid": {
+    "title": "Metrics",
+    "description": "Descption about the data beside. Lorem ipsum dolor sit amet, consectetur adipiscing.",
+    "metrics": [
+      {
+        "value": "61%",
+        "label": "Metric 1"
+      },
+      {
+        "value": "56%",
+        "label": "Metric 2"
+      },
+      {
+        "value": "55%",
+        "label": "Metric 3"
+      },
+      {
+        "value": "48%",
+        "label": "Metric 4"
+      }
+    ]
+  },
+  "quote": {
+    "quote": "This is a stellar quote from a user or customer that really stands out.",
+    "author": "Full Name · Location"
+  }
+}

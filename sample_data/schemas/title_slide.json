@@ -1,0 +1,23 @@
+{
+  "description": "Content for title slide (a-title-slide).\n\nUse case: Presentation opening, cover slide, title page",
+  "properties": {
+    "title": {
+      "description": "Main presentation title",
+      "maxLength": 80,
+      "title": "Title",
+      "type": "string"
+    },
+    "subtitle": {
+      "description": "Subtitle or tagline",
+      "maxLength": 120,
+      "title": "Subtitle",
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "subtitle"
+  ],
+  "title": "TitleSlideContent",
+  "type": "object"
+}

@@ -1,0 +1,52 @@
+{
+  "$defs": {
+    "ListItem": {
+      "description": "List item with title and description.",
+      "properties": {
+        "title": {
+          "description": "Item title",
+          "maxLength": 100,
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "description": "Item description",
+          "maxLength": 300,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "ListItem",
+      "type": "object"
+    }
+  },
+  "description": "Content for horizontal 3 column list slide (g-horizontal-3-column-list).\n\nUse case: Three-way comparisons, feature trios, exactly 3 items",
+  "properties": {
+    "title": {
+      "description": "List title",
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    },
+    "items": {
+      "description": "Exactly 3 items",
+      "items": {
+        "$ref": "#/$defs/ListItem"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Items",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "items"
+  ],
+  "title": "Horizontal3ColumnListContent",
+  "type": "object"
+}

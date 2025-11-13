@@ -1,0 +1,52 @@
+{
+  "$defs": {
+    "ListItem": {
+      "description": "List item with title and description.",
+      "properties": {
+        "title": {
+          "description": "Item title",
+          "maxLength": 100,
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "description": "Item description",
+          "maxLength": 300,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "ListItem",
+      "type": "object"
+    }
+  },
+  "description": "Content for vertical list slide (f-vertical-list).\n\nUse case: Detailed feature lists, 3-6 items with more space",
+  "properties": {
+    "title": {
+      "description": "List title",
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    },
+    "items": {
+      "description": "3-6 list items",
+      "items": {
+        "$ref": "#/$defs/ListItem"
+      },
+      "maxItems": 6,
+      "minItems": 3,
+      "title": "Items",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "items"
+  ],
+  "title": "VerticalListContent",
+  "type": "object"
+}

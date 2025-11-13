@@ -1,0 +1,13 @@
+<!-- m. Metrics Grid -->
+<div class="container">
+  <div class="left-col">
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
+  </div>
+  <div class="right-col">
+{% for metric in metrics %}    <div class="metric-item">
+      <h2>{{ metric.value }}</h2>
+      <p>{{ metric.label }}</p>
+    </div>
+{% endfor %}  </div>
+</div>

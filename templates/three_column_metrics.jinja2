@@ -1,0 +1,13 @@
+<!-- l. 3 Column Metrics -->
+<div class="section-title-container">
+  <h1 class="section-title">{{ title }}</h1>
+
+  <div class="section-content">
+    <div class="grid-3col">
+{% for metric in metrics %}      <div class="metric">
+        <div class="metric-value">{{ metric.value }}</div>
+        <p>{{ metric.description }}</p>
+      </div>
+{% endfor %}    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+{
+  "$defs": {
+    "ImageItem": {
+      "description": "Image with URL and alt text.",
+      "properties": {
+        "url": {
+          "description": "Image URL (can be relative or absolute)",
+          "title": "Url",
+          "type": "string"
+        },
+        "alt": {
+          "description": "Image alt text for accessibility",
+          "maxLength": 100,
+          "title": "Alt",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "alt"
+      ],
+      "title": "ImageItem",
+      "type": "object"
+    },
+    "ListItem": {
+      "description": "List item with title and description.",
+      "properties": {
+        "title": {
+          "description": "Item title",
+          "maxLength": 100,
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "description": "Item description",
+          "maxLength": 300,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "ListItem",
+      "type": "object"
+    }
+  },
+  "description": "Content for image with description slide - 3 images (k-image-with-description---3-images-text).\n\nUse case: Product galleries, step-by-step visuals, exactly 3 images + 3 descriptions",
+  "properties": {
+    "title": {
+      "description": "Slide title",
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    },
+    "images": {
+      "description": "Exactly 3 images",
+      "items": {
+        "$ref": "#/$defs/ImageItem"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Images",
+      "type": "array"
+    },
+    "items": {
+      "description": "Exactly 3 text descriptions matching images",
+      "items": {
+        "$ref": "#/$defs/ListItem"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Items",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "images",
+    "items"
+  ],
+  "title": "ImageWithDescription3Content",
+  "type": "object"
+}

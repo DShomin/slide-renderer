@@ -1,0 +1,23 @@
+{
+  "description": "Content for quote slide (n-quote).\n\nUse case: Testimonials, customer quotes, impactful statements",
+  "properties": {
+    "quote": {
+      "description": "Quote text (without quotes)",
+      "maxLength": 200,
+      "title": "Quote",
+      "type": "string"
+    },
+    "author": {
+      "description": "Author name and optional location (e.g., 'Full Name \u00b7 Location')",
+      "maxLength": 80,
+      "title": "Author",
+      "type": "string"
+    }
+  },
+  "required": [
+    "quote",
+    "author"
+  ],
+  "title": "QuoteContent",
+  "type": "object"
+}

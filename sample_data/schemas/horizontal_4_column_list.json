@@ -1,0 +1,52 @@
+{
+  "$defs": {
+    "ListItem": {
+      "description": "List item with title and description.",
+      "properties": {
+        "title": {
+          "description": "Item title",
+          "maxLength": 100,
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "description": "Item description",
+          "maxLength": 300,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "ListItem",
+      "type": "object"
+    }
+  },
+  "description": "Content for horizontal 4 column list slide (i-horizontal-4-column-list).\n\nUse case: Four-step processes, quarterly results, exactly 4 items",
+  "properties": {
+    "title": {
+      "description": "List title",
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    },
+    "items": {
+      "description": "Exactly 4 items",
+      "items": {
+        "$ref": "#/$defs/ListItem"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "title": "Items",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "items"
+  ],
+  "title": "Horizontal4ColumnListContent",
+  "type": "object"
+}

@@ -1,0 +1,16 @@
+{
+  "description": "Content for section title slide (b-section-title).\n\nUse case: Section breaks, chapter transitions",
+  "properties": {
+    "title": {
+      "description": "Section title",
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "title": "SectionTitleContent",
+  "type": "object"
+}

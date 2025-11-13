@@ -1,0 +1,59 @@
+{
+  "$defs": {
+    "MetricValue": {
+      "description": "Metric with value and label (for metrics grid).",
+      "properties": {
+        "value": {
+          "description": "Metric value (e.g., '61%', '$2.5M')",
+          "maxLength": 20,
+          "title": "Value",
+          "type": "string"
+        },
+        "label": {
+          "description": "Metric label",
+          "maxLength": 50,
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "label"
+      ],
+      "title": "MetricValue",
+      "type": "object"
+    }
+  },
+  "description": "Content for metrics grid slide (m-metrics-grid).\n\nUse case: Dashboard views, quarterly metrics, exactly 4 metrics in 2x2 grid",
+  "properties": {
+    "title": {
+      "description": "Metrics title",
+      "maxLength": 40,
+      "title": "Title",
+      "type": "string"
+    },
+    "description": {
+      "description": "Description about the metrics",
+      "maxLength": 200,
+      "title": "Description",
+      "type": "string"
+    },
+    "metrics": {
+      "description": "Exactly 4 metrics for 2x2 grid",
+      "items": {
+        "$ref": "#/$defs/MetricValue"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "title": "Metrics",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "metrics"
+  ],
+  "title": "MetricsGridContent",
+  "type": "object"
+}
