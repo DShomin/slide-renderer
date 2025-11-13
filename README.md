@@ -213,7 +213,7 @@ renderer.save_presentation(slides, "output.md")
 
 ---
 
-## API Reference
+## Reference
 
 ### SlideRenderer
 
@@ -395,10 +395,4 @@ Templates: `templates/{slide_type}.jinja2`
 
 ---
 
-## License
-
-MIT License - see [LICENSE](LICENSE) file.
-
----
-
-**Made with ❤️ by the B-Lab Team**
+**Made by the B-Lab Team**

@@ -213,7 +213,7 @@ renderer.save_presentation(slides, "output.md")
 
 ---
 
-## API 참조
+## 참조
 
 ### SlideRenderer
 
@@ -393,11 +393,6 @@ renderer = SlideRenderer(template_dir="my_templates/")
 
 템플릿 위치: `templates/{slide_type}.jinja2`
 
----
-
-## 라이선스
-
-MIT License - [LICENSE](LICENSE) 파일을 참조하세요.
 
 ---
 
