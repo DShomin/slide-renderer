@@ -28,26 +28,68 @@ slide-renderer는 슬라이드 JSON을 Marp 마크다운 프레젠테이션으�
 
 ---
 
+## 요구사항
+
+### Python 환경
+
+- **Python**: 3.9 이상
+- **패키지 매니저**: [uv](https://github.com/astral-sh/uv) (권장) 또는 pip
+- **의존성**:
+  - `jinja2>=3.0.0` - 템플릿 렌더링
+  - `pydantic>=2.0.0,<3.0.0` - 데이터 검증
+
+### Marp CLI (PDF/HTML/PPTX 변환 필수)
+
+**Marp CLI**는 마크다운 파일을 프레젠테이션 포맷으로 변환합니다.
+
+```bash
+# npm으로 설치 (Node.js 필요)
+npm install -g @marp-team/marp-cli
+
+# 설치 확인
+marp --version
+```
+
+Node.js가 없다면 [nodejs.org](https://nodejs.org/)에서 다운로드하세요.
+
+### 선택사항: LLM 통합
+
+paper-to-presentation 예제 사용 시:
+
+```bash
+# .env 파일 생성
+cp .env.example .env
+
+# .env 파일을 편집하여 API 키 추가
+UPSTAGE_API_KEY=your-api-key-here
+```
+
+**추가 의존성** (자동 설치됨):
+- `openai>=1.0.0` - LLM 클라이언트 (Solar Pro2 호환)
+- `python-dotenv` - 환경 변수 관리
+
+---
+
 ## 설치
 
 ### uv 사용 (권장)
 
-[uv](https://github.com/astral-sh/uv)는 빠른 Python 패키지 매니저입니다. 더 나은 성능과 의존성 관리를 위해 uv 사용을 권장합니다.
+[uv](https://github.com/astral-sh/uv)는 빠른 Python 패키지 매니저로 더 나은 성능과 의존성 관리를 제공합니다.
 
 ```bash
-# uv가 설치되어 있지 않다면 먼저 설치
+# 1. uv 설치
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# 저장소 클론
+# 2. 저장소 클론
 git clone https://github.com/your-username/slide-renderer.git
 cd slide-renderer
 
-# 가상 환경 생성 및 의존성 설치
+# 3. 가상 환경 생성 및 의존성 설치
 uv venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 uv pip install -e .
 
-# 개발 도구 포함 설치
+# 4. 개발 도구 포함 설치
 uv pip install -e ".[dev]"
 ```
 
@@ -58,6 +100,16 @@ uv pip install -e ".[dev]"
 git clone https://github.com/your-username/slide-renderer.git
 cd slide-renderer
 pip install -e .
+```
+
+### 설치 확인
+
+```bash
+# 임포트 테스트
+python -c "from slide_renderer import SlideRenderer; print('✓ 설치 완료')"
+
+# 예제 실행
+python examples/basic_usage.py
 ```
 
 ---
@@ -481,26 +533,6 @@ renderer = SlideRenderer(template_dir="my_templates/")
 ```
 
 템플릿은 `templates/{slide_type}.jinja2`에 위치합니다. 템플릿 변수는 Pydantic 스키마 필드와 일치합니다.
-
----
-
-## 요구사항
-
-### Python 의존성
-
-- **Python**: 3.9+
-- **핵심**: `jinja2>=3.0.0`, `pydantic>=2.0.0,<3.0.0`
-- **LLM 예제**: `openai>=1.0.0`, `python-dotenv`
-
-### Marp CLI (PDF/HTML/PPTX 내보내기용)
-
-```bash
-# Marp CLI 설치 (Node.js 필요)
-npm install -g @marp-team/marp-cli
-
-# 확인
-marp --version
-```
 
 ---
 

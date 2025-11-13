@@ -28,26 +28,68 @@ slide-renderer is a **pure rendering library** that converts slide JSON to Marp 
 
 ---
 
+## Requirements
+
+### Python Environment
+
+- **Python**: 3.9 or higher
+- **Package Manager**: [uv](https://github.com/astral-sh/uv) (recommended) or pip
+- **Dependencies**:
+  - `jinja2>=3.0.0` - Template rendering
+  - `pydantic>=2.0.0,<3.0.0` - Data validation
+
+### Marp CLI (Required for PDF/HTML/PPTX Export)
+
+**Marp CLI** converts markdown files to presentation formats.
+
+```bash
+# Install using npm (requires Node.js)
+npm install -g @marp-team/marp-cli
+
+# Verify installation
+marp --version
+```
+
+If you don't have Node.js, download it from [nodejs.org](https://nodejs.org/)
+
+### Optional: LLM Integration
+
+For the paper-to-presentation example:
+
+```bash
+# Create .env file
+cp .env.example .env
+
+# Edit .env and add your API key
+UPSTAGE_API_KEY=your-api-key-here
+```
+
+**Additional dependencies** (installed automatically):
+- `openai>=1.0.0` - LLM client (Solar Pro2 compatible)
+- `python-dotenv` - Environment variable management
+
+---
+
 ## Installation
 
 ### Using uv (Recommended)
 
-[uv](https://github.com/astral-sh/uv) is a fast Python package manager. We recommend using it for better performance and dependency management.
+[uv](https://github.com/astral-sh/uv) is a fast Python package manager with better performance and dependency management.
 
 ```bash
-# Install uv if you haven't already
+# 1. Install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Clone the repository
+# 2. Clone the repository
 git clone https://github.com/your-username/slide-renderer.git
 cd slide-renderer
 
-# Create virtual environment and install dependencies
+# 3. Create virtual environment and install dependencies
 uv venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 uv pip install -e .
 
-# For development with additional tools
+# 4. For development with additional tools
 uv pip install -e ".[dev]"
 ```
 
@@ -58,6 +100,16 @@ uv pip install -e ".[dev]"
 git clone https://github.com/your-username/slide-renderer.git
 cd slide-renderer
 pip install -e .
+```
+
+### Verify Installation
+
+```bash
+# Test imports
+python -c "from slide_renderer import SlideRenderer; print('✓ Installation successful')"
+
+# Run example
+python examples/basic_usage.py
 ```
 
 ---
@@ -481,26 +533,6 @@ renderer = SlideRenderer(template_dir="my_templates/")
 ```
 
 Templates are located in `templates/{slide_type}.jinja2`. Template variables match Pydantic schema fields.
-
----
-
-## Requirements
-
-### Python Dependencies
-
-- **Python**: 3.9+
-- **Core**: `jinja2>=3.0.0`, `pydantic>=2.0.0,<3.0.0`
-- **LLM Example**: `openai>=1.0.0`, `python-dotenv`
-
-### Marp CLI (for PDF/HTML/PPTX export)
-
-```bash
-# Install Marp CLI (requires Node.js)
-npm install -g @marp-team/marp-cli
-
-# Verify
-marp --version
-```
 
 ---
 
