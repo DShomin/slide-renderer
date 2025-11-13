@@ -86,7 +86,7 @@ render-pdf: ## Render markdown to PDF (requires MARKDOWN_FILE variable)
 		exit 1; \
 	fi
 	@command -v marp >/dev/null 2>&1 || { echo "Error: Marp CLI is not installed. Run 'make marp-install'"; exit 1; }
-	marp --theme ../custom-style.css $(MARKDOWN_FILE) --pdf
+	marp --theme custom-style.css $(MARKDOWN_FILE) --pdf
 	@echo "✅ PDF generated: $(basename $(MARKDOWN_FILE) .md).pdf"
 
 render-html: ## Render markdown to HTML (requires MARKDOWN_FILE variable)
@@ -96,7 +96,7 @@ render-html: ## Render markdown to HTML (requires MARKDOWN_FILE variable)
 		exit 1; \
 	fi
 	@command -v marp >/dev/null 2>&1 || { echo "Error: Marp CLI is not installed. Run 'make marp-install'"; exit 1; }
-	marp --theme ../custom-style.css $(MARKDOWN_FILE) --html
+	marp --theme custom-style.css $(MARKDOWN_FILE) --html
 	@echo "✅ HTML generated: $(basename $(MARKDOWN_FILE) .md).html"
 
 render-pptx: ## Render markdown to PowerPoint (requires MARKDOWN_FILE variable)
@@ -106,7 +106,7 @@ render-pptx: ## Render markdown to PowerPoint (requires MARKDOWN_FILE variable)
 		exit 1; \
 	fi
 	@command -v marp >/dev/null 2>&1 || { echo "Error: Marp CLI is not installed. Run 'make marp-install'"; exit 1; }
-	marp --theme ../custom-style.css $(MARKDOWN_FILE) --pptx
+	marp --theme custom-style.css $(MARKDOWN_FILE) --pptx
 	@echo "✅ PowerPoint generated: $(basename $(MARKDOWN_FILE) .md).pptx"
 
 # Quick workflow: generate and render

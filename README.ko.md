@@ -294,10 +294,10 @@ Marp CLI로 마크다운을 PDF/HTML/PPTX로 변환합니다:
 npm install -g @marp-team/marp-cli
 
 # PDF로 변환
-marp --theme ../custom-style.css output.md --pdf
+marp --theme custom-style.css output.md --pdf
 
 # HTML로 변환
-marp --theme ../custom-style.css output.md --html
+marp --theme custom-style.css output.md --html
 
 # 또는 Makefile 사용
 make render-pdf MARKDOWN_FILE=output.md

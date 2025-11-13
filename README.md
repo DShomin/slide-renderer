@@ -294,10 +294,10 @@ Use Marp CLI to convert markdown to PDF/HTML/PPTX:
 npm install -g @marp-team/marp-cli
 
 # Convert to PDF
-marp --theme ../custom-style.css output.md --pdf
+marp --theme custom-style.css output.md --pdf
 
 # Convert to HTML
-marp --theme ../custom-style.css output.md --html
+marp --theme custom-style.css output.md --html
 
 # Or use Makefile
 make render-pdf MARKDOWN_FILE=output.md
