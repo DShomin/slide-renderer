@@ -25,7 +25,9 @@ license = {text = "MIT"}
 
 dependencies = [
     "jinja2>=3.0.0",
+    "openai>=2.7.2",
     "pydantic>=2.0.0,<3.0.0",
+    "python-dotenv>=1.2.1",
 ]
 
 [project.optional-dependencies]

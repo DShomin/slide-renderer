@@ -2,31 +2,23 @@
 
 A standalone package for converting structured slide data (JSON) into
 Marp-compatible markdown presentations with Jinja2 templates.
+
+Core Purpose:
+    - Render slide JSON to Marp markdown using Jinja2 templates
+    - Validate slide content with Pydantic schemas
+    - Support 14 different slide layouts
+
+Usage:
+    from slide_renderer import SlideRenderer
+
+    renderer = SlideRenderer()
+    markdown = renderer.render_presentation(slides_data, validate=True)
 """
 
 __version__ = "0.1.0"
 
 from slide_renderer.renderer import SlideRenderer
 from slide_renderer.types import SlideTypeEnum
-
-# LLM output utilities
-from slide_renderer.llm_output import (
-    SLIDE_TYPE_VALUES,
-    SlideTypeLiteral,
-    export_enum_values,
-    export_for_anthropic,
-    export_for_openai,
-    get_anthropic_tool_schema,
-    get_anthropic_tool_schema_with_descriptions,
-    get_openai_function_schema,
-    get_openai_function_schema_with_descriptions,
-    get_presentation_json_schema,
-    get_slide_type_descriptions,
-    get_slide_type_info,
-    get_slide_type_json_schema,
-    get_slide_type_json_schema_with_descriptions,
-    validate_slide_type,
-)
 
 # Content schemas
 from slide_renderer.schemas import (
@@ -57,31 +49,15 @@ from slide_renderer.schemas import (
 __all__ = [
     # Version
     "__version__",
-    # Main renderer
+    # Core renderer
     "SlideRenderer",
-    # Slide types
     "SlideTypeEnum",
-    # LLM output utilities
-    "SLIDE_TYPE_VALUES",
-    "SlideTypeLiteral",
-    "get_slide_type_json_schema",
-    "get_slide_type_json_schema_with_descriptions",
-    "get_openai_function_schema",
-    "get_openai_function_schema_with_descriptions",
-    "get_anthropic_tool_schema",
-    "get_anthropic_tool_schema_with_descriptions",
-    "get_presentation_json_schema",
-    "get_slide_type_info",
-    "validate_slide_type",
-    "get_slide_type_descriptions",
-    "export_for_openai",
-    "export_for_anthropic",
-    "export_enum_values",
-    # Content schemas
+    # Validation schemas
     "SLIDE_CONTENT_MODELS",
     "get_content_model",
     "get_json_schema",
     "get_all_schemas",
+    # Slide content models (14 types)
     "TitleSlideContent",
     "SectionTitleContent",
     "SingleContentWithImageContent",
@@ -96,6 +72,7 @@ __all__ = [
     "ThreeColumnMetricsContent",
     "MetricsGridContent",
     "QuoteContent",
+    # Component models
     "ListItem",
     "ImageItem",
     "MetricValue",

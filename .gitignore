@@ -49,4 +49,11 @@ dmypy.json
 
 # Example output files
 output_presentation.md
+sample_presentation.md
+solar_pro2_presentation.md
 example_presentation.json
+
+# Environment variables
+.env
+.env.local
+.env.*.local

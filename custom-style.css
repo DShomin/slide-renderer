@@ -1,0 +1,390 @@
+
+/* @theme custom-style */
+@import "default";
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
+/* 기본 스타일 */
+section {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  color: #000;
+  padding: 80px 100px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 제목 스타일 - Title Slide (첫 페이지) */
+section h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+  color: #000 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Section Title (두 번째 페이지 - 중간 크기) */
+section h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.3;
+  margin: 0;
+  color: #000;
+}
+
+/* 섹션 서브타이틀 컨테이너 */
+.section-title-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* 섹션 서브타이틀 (상단 고정 - 작은 크기) */
+h1.section-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1.3;
+  margin: 0 0 50px 0;
+  color: #000 !important;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+/* 섹션 컨텐츠 영역 */
+.section-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section h3 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  margin: 0 0 12px 0;
+  color: #000;
+}
+
+section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #000;
+  margin: 0;
+}
+
+/* Title Slide의 부제목 */
+section h1 + h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* 중앙 정렬 (섹션 제목, 인용구, 마무리 등) */
+section.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 2열 레이아웃 - 기본 */
+.two-column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  width: 100%;
+  height: 100%;
+}
+
+.two-column .left {
+  flex: 0 0 auto;
+  max-width: 450px;
+}
+
+.two-column .left h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0 0 30px 0;
+  color: #000 !important;
+  letter-spacing: -0.02em;
+}
+
+.two-column .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* 이미지 플레이스홀더 */
+.placeholder {
+  width: 100%;
+  height: 400px;
+  background-color: #f5f5f5;
+  background-size: 40px 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.placeholder-small {
+  width: 100%;
+  height: 350px;
+  background-color: #f5f5f5;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 이미지 그리드 - 2열 */
+.image-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* 이미지 그리드 - 3열 */
+.image-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* 텍스트 그리드 - 2열 (넓은 간격) */
+.text-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* 세로 리스트 */
+.list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.list-item h3 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.list-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 가로 4열 그리드 */
+.grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+}
+
+/* 가로 3열 그리드 */
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  text-align: left;
+}
+
+/* 2x2 그리드 */
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+}
+
+/* 메트릭 스타일 */
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-value {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #000;
+}
+
+.metric-label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+}
+
+/* Metrics Grid 레이아웃 (14번 슬라이드) */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  width: 100%;
+}
+
+.left-col {
+  flex: 0 0 auto;
+  max-width: 400px;
+}
+
+.right-col {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 50px;
+}
+
+.left-col h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.left-col p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-item h2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1;
+}
+
+.metric-item p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* 인용구 레이아웃 */
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.quote .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #fff;
+  background-size: 20px 20px;
+}
+
+.quote blockquote {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 800px;
+  text-align: center;
+  margin: 0;
+}
+
+.quote cite {
+  font-size: 1rem;
+  color: #999;
+  font-style: normal;
+}
+
