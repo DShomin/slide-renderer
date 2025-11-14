@@ -1,0 +1,74 @@
+{
+  "$defs": {
+    "MetricWithDescription": {
+      "description": "Metric for three_column_metrics.",
+      "properties": {
+        "value": {
+          "maxLength": 20,
+          "title": "Value",
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 150,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "description"
+      ],
+      "title": "MetricWithDescription",
+      "type": "object"
+    },
+    "SlideType": {
+      "description": "Available slide types (all 14 types from templates).",
+      "enum": [
+        "title_slide",
+        "section_title",
+        "single_content_with_image",
+        "highlight",
+        "two_column_list",
+        "vertical_list",
+        "horizontal_3_column_list",
+        "two_columns_with_grid",
+        "horizontal_4_column_list",
+        "image_with_description_2",
+        "image_with_description_3",
+        "three_column_metrics",
+        "metrics_grid",
+        "quote"
+      ],
+      "title": "SlideType",
+      "type": "string"
+    }
+  },
+  "description": "Three column metrics content.",
+  "properties": {
+    "type": {
+      "$ref": "#/$defs/SlideType",
+      "description": "Must be 'three_column_metrics'"
+    },
+    "title": {
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    },
+    "metrics": {
+      "items": {
+        "$ref": "#/$defs/MetricWithDescription"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Metrics",
+      "type": "array"
+    }
+  },
+  "required": [
+    "type",
+    "title",
+    "metrics"
+  ],
+  "title": "ThreeColumnMetricsContent",
+  "type": "object"
+}

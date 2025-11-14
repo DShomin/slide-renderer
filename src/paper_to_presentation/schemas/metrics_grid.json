@@ -1,0 +1,80 @@
+{
+  "$defs": {
+    "MetricValue": {
+      "description": "Metric for metrics_grid (2x2 grid).",
+      "properties": {
+        "value": {
+          "maxLength": 20,
+          "title": "Value",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 50,
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "label"
+      ],
+      "title": "MetricValue",
+      "type": "object"
+    },
+    "SlideType": {
+      "description": "Available slide types (all 14 types from templates).",
+      "enum": [
+        "title_slide",
+        "section_title",
+        "single_content_with_image",
+        "highlight",
+        "two_column_list",
+        "vertical_list",
+        "horizontal_3_column_list",
+        "two_columns_with_grid",
+        "horizontal_4_column_list",
+        "image_with_description_2",
+        "image_with_description_3",
+        "three_column_metrics",
+        "metrics_grid",
+        "quote"
+      ],
+      "title": "SlideType",
+      "type": "string"
+    }
+  },
+  "description": "Metrics grid (2x2) content.",
+  "properties": {
+    "type": {
+      "$ref": "#/$defs/SlideType",
+      "description": "Must be 'metrics_grid'"
+    },
+    "title": {
+      "maxLength": 40,
+      "title": "Title",
+      "type": "string"
+    },
+    "description": {
+      "maxLength": 200,
+      "title": "Description",
+      "type": "string"
+    },
+    "metrics": {
+      "items": {
+        "$ref": "#/$defs/MetricValue"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "title": "Metrics",
+      "type": "array"
+    }
+  },
+  "required": [
+    "type",
+    "title",
+    "description",
+    "metrics"
+  ],
+  "title": "MetricsGridContent",
+  "type": "object"
+}

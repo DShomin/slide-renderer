@@ -1,0 +1,49 @@
+{
+  "$defs": {
+    "SlideType": {
+      "description": "Available slide types (all 14 types from templates).",
+      "enum": [
+        "title_slide",
+        "section_title",
+        "single_content_with_image",
+        "highlight",
+        "two_column_list",
+        "vertical_list",
+        "horizontal_3_column_list",
+        "two_columns_with_grid",
+        "horizontal_4_column_list",
+        "image_with_description_2",
+        "image_with_description_3",
+        "three_column_metrics",
+        "metrics_grid",
+        "quote"
+      ],
+      "title": "SlideType",
+      "type": "string"
+    }
+  },
+  "description": "Highlight slide content.",
+  "properties": {
+    "type": {
+      "$ref": "#/$defs/SlideType",
+      "description": "Must be 'highlight'"
+    },
+    "title": {
+      "maxLength": 40,
+      "title": "Title",
+      "type": "string"
+    },
+    "content": {
+      "maxLength": 200,
+      "title": "Content",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "title",
+    "content"
+  ],
+  "title": "HighlightContent",
+  "type": "object"
+}

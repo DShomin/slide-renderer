@@ -1,0 +1,74 @@
+{
+  "$defs": {
+    "ListItem": {
+      "description": "List item component.",
+      "properties": {
+        "title": {
+          "maxLength": 100,
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 300,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "ListItem",
+      "type": "object"
+    },
+    "SlideType": {
+      "description": "Available slide types (all 14 types from templates).",
+      "enum": [
+        "title_slide",
+        "section_title",
+        "single_content_with_image",
+        "highlight",
+        "two_column_list",
+        "vertical_list",
+        "horizontal_3_column_list",
+        "two_columns_with_grid",
+        "horizontal_4_column_list",
+        "image_with_description_2",
+        "image_with_description_3",
+        "three_column_metrics",
+        "metrics_grid",
+        "quote"
+      ],
+      "title": "SlideType",
+      "type": "string"
+    }
+  },
+  "description": "Vertical list content.",
+  "properties": {
+    "type": {
+      "$ref": "#/$defs/SlideType",
+      "description": "Must be 'vertical_list'"
+    },
+    "title": {
+      "maxLength": 60,
+      "title": "Title",
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "$ref": "#/$defs/ListItem"
+      },
+      "maxItems": 6,
+      "minItems": 3,
+      "title": "Items",
+      "type": "array"
+    }
+  },
+  "required": [
+    "type",
+    "title",
+    "items"
+  ],
+  "title": "VerticalListContent",
+  "type": "object"
+}
