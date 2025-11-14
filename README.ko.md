@@ -28,39 +28,65 @@ uv pip install -e .
 
 ### 기본 사용법
 
+#### CLI (커맨드 라인)
+
+```bash
+# JSON을 Markdown으로 렌더링
+slide-renderer -i slides.json -o presentation.md
+
+# 또는 파이핑 사용
+cat slides.json | slide-renderer > presentation.md
+```
+
+#### Python API
+
 ```python
+import json
 from slide_renderer import SlideRenderer
 
-# 렌더러 생성
+# 샘플 슬라이드 로드 (딕셔너리 형식: slide_type -> content)
+with open("sample_data/sample_slides.json") as f:
+    sample_data = json.load(f)
+
+# 프레젠테이션 형식으로 변환: [{"type": slide_type, "content": {...}}, ...]
+slides = [{"type": slide_type, "content": content}
+          for slide_type, content in sample_data.items()]
+
+# 렌더러 생성 및 렌더링
 renderer = SlideRenderer()
-
-# 슬라이드 정의
-slides = [
-    {
-        "type": "title_slide",
-        "content": {
-            "title": "내 프레젠테이션",
-            "subtitle": "slide-renderer로 만들었습니다"
-        }
-    },
-    {
-        "type": "vertical_list",
-        "content": {
-            "title": "주요 기능",
-            "items": [
-                {"title": "빠름", "description": "고성능"},
-                {"title": "간단함", "description": "사용하기 쉬움"}
-            ]
-        }
-    }
-]
-
-# 마크다운으로 렌더링
 markdown = renderer.render_presentation(slides, validate=True)
 
 # 파일로 저장
 with open("presentation.md", "w") as f:
     f.write(markdown)
+```
+
+**JSON 스키마 형식**:
+
+렌더러는 슬라이드 객체 배열을 입력받습니다. 각 슬라이드는:
+- `type`: 슬라이드 타입 식별자 ([슬라이드 타입](#슬라이드-타입--콘텐츠-스키마) 참조)
+- `content`: 타입별 콘텐츠 객체
+
+```json
+[
+  {
+    "type": "title_slide",
+    "content": {
+      "title": "프레젠테이션 제목",
+      "subtitle": "부제목 텍스트"
+    }
+  },
+  {
+    "type": "two_column_list",
+    "content": {
+      "title": "기능",
+      "items": [
+        {"title": "항목 1", "description": "설명 1"},
+        {"title": "항목 2", "description": "설명 2"}
+      ]
+    }
+  }
+]
 ```
 
 ### PDF/HTML/PPTX로 변환
@@ -119,26 +145,61 @@ graph TB
 
 ---
 
-## 슬라이드 타입
+## 슬라이드 타입 & 콘텐츠 스키마
 
-| 슬라이드 타입 | 사용 사례 | 구성 요소 |
-|------------|----------|----------|
-| `title_slide` | 프레젠테이션 시작 | 제목 + 부제목 |
-| `section_title` | 섹션 구분 | 제목만 |
+각 슬라이드 타입은 특정 콘텐츠 스키마를 가집니다. 모든 슬라이드는 다음 형식을 따릅니다:
+
+```json
+{
+  "type": "slide_type_name",
+  "content": {
+    // 타입별 필드
+  }
+}
+```
+
+| 슬라이드 타입 | 사용 사례 | 항목 수 |
+|------------|----------|---------|
+| `title_slide` | 프레젠테이션 시작 | - |
+| `section_title` | 섹션 구분 | - |
+| `highlight` | 핵심 메시지 | - |
+| `two_column_list` | 양측 리스트 | 2-4개 항목 |
 | `vertical_list` | 상세 기능 설명 | 3-6개 항목 |
-| `two_column_list` | 양측 비교 | 2-4개 항목 |
-| `horizontal_3_column_list` | 3가지 비교 | 3개 열 |
-| `horizontal_4_column_list` | 4단계 프로세스 | 4개 열 |
+| `horizontal_3_column_list` | 3가지 비교 | 3개 항목 |
+| `horizontal_4_column_list` | 4단계 프로세스 | 4개 항목 |
 | `two_columns_with_grid` | 2x2 매트릭스 | 4개 항목 |
-| `single_content_with_image` | 기능 강조 | 콘텐츠 + 이미지 |
-| `image_with_description_2` | 전후 비교 | 2개 이미지 + 텍스트 |
-| `image_with_description_3` | 제품 갤러리 | 3개 이미지 + 텍스트 |
+| `single_content_with_image` | 기능 강조 | 1개 이미지 |
+| `image_with_description_2` | 전후 비교 | 2개 이미지 |
+| `image_with_description_3` | 제품 갤러리 | 3개 이미지 |
 | `three_column_metrics` | KPI 대시보드 | 3개 지표 |
-| `metrics_grid` | 분기별 지표 | 4개 지표 (2x2) |
-| `quote` | 추천사 | 인용구 + 저자 |
-| `highlight` | 핵심 메시지 | 제목 + 설명 |
+| `metrics_grid` | 분기별 지표 | 4개 지표 |
+| `quote` | 추천사 | - |
 
-JSON 예제는 [sample_data/README.md](sample_data/README.md)를 참조하세요.
+### 콘텐츠 스키마 상세
+
+상세한 스키마 사양은 [sample_data/README.md](sample_data/README.md)를 참조하세요.
+
+**슬라이드 구조 예시**:
+```json
+{
+  "type": "two_column_list",
+  "content": {
+    "title": "기능",
+    "items": [
+      {"title": "기능 1", "description": "설명 1"},
+      {"title": "기능 2", "description": "설명 2"}
+    ]
+  }
+}
+```
+
+**필드 제약 조건**:
+- `title`: 40-80자 (슬라이드 타입에 따라 다름)
+- `description`: 최대 300자
+- `items`: 2-6개 항목 (슬라이드 타입에 따라 다름)
+- `metrics`: 3-4개 지표 (슬라이드 타입에 따라 다름)
+
+전체 Pydantic 스키마는 [src/slide_renderer/schemas/content.py](src/slide_renderer/schemas/content.py)를 참조하세요.
 
 ---
 
@@ -172,7 +233,22 @@ UPSTAGE_API_KEY=your-api-key-here
 
 ## 예제
 
-### 예제 실행
+### CLI 예제
+
+```bash
+# 예제 프레젠테이션 렌더링
+slide-renderer -i examples/cli_example.json -o examples/cli_example.md --verbose
+
+# Marp로 보기
+marp examples/cli_example.md --watch
+
+# PDF로 내보내기
+marp examples/cli_example.md -o output.pdf --theme custom-style.css
+```
+
+상세한 CLI 문서는 [CLI_USAGE.md](CLI_USAGE.md)를 참조하세요.
+
+### Python 예제 실행
 
 ```bash
 # 기본 렌더링

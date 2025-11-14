@@ -138,7 +138,31 @@ graph TB
 | `quote` | Testimonials | Quote + Author |
 | `highlight` | Key messages | Title + Description |
 
-See [sample_data/README.md](sample_data/README.md) for JSON examples.
+### Content Schema Details
+
+See detailed schema specifications in [sample_data/README.md](sample_data/README.md).
+
+**Example slide structure**:
+```json
+{
+  "type": "two_column_list",
+  "content": {
+    "title": "Features",
+    "items": [
+      {"title": "Feature 1", "description": "Description 1"},
+      {"title": "Feature 2", "description": "Description 2"}
+    ]
+  }
+}
+```
+
+**Field constraints**:
+- `title`: 40-80 chars (depending on slide type)
+- `description`: max 300 chars
+- `items`: 2-6 items (depending on slide type)
+- `metrics`: 3-4 metrics (depending on slide type)
+
+See [src/slide_renderer/schemas/content.py](src/slide_renderer/schemas/content.py) for complete Pydantic schemas.
 
 ---
 
